@@ -54,9 +54,9 @@ export default class Polymerization extends Component {
     this.gridRatio = 100;
     this.view = null;
     this.ons = [];
-    this.renderingStack = [];
     this.pointDatas = [];
     this.textDatas = [];
+    this.mapMask = null;
     this.popup = "";
     this.pointsObj = [];
     this.lastData = null;
@@ -88,19 +88,8 @@ export default class Polymerization extends Component {
     }
   }
 
-  drawGeometry(geos) {
-    this.view.graphics.addMany(geos);
-    this.renderingStack = this.renderingStack.concat(geos);
-    // console.log(geos, this.renderingStack);
-  }
-
   updatePoints(stateData, cameraCtrl) {
     this.shownState = stateData;
-    while (this.renderingStack.length > 0) {
-      let popuped = this.renderingStack.pop();
-      console.log(popuped.layer.graphics.items.length, this.renderingStack.length);
-      this.view.graphics.remove(popuped);
-    }
 
     this.popup && ReactDOM.unmountComponentAtNode(this.popup);
 
@@ -129,16 +118,19 @@ export default class Polymerization extends Component {
         }
       }
     });
-    this.drawGeometry([polygonGraphic]);
-    let pointgeos = this.pointDatas.filter(g => {
+
+    this.mapMask && this.view.graphics.remove(this.mapMask);
+    this.mapMask = polygonGraphic;
+    this.view.graphics.add(this.mapMask);
+
+    this.pointDatas.forEach(g => {
       let e = g.attributes;
       let result = stateData.street === 0 || streets[stateData.street] === (e.township || e[11]);
-      return result;
+      g.visible = result;
     });
-    this.drawGeometry(pointgeos);
 
     if (stateData.street !== 0) {
-      let textgeos = this.textDatas.filter(g => {
+      this.textDatas.forEach(g => {
         let e = g.attributes;
         let result = stateData.street === 0 || streets[stateData.street] === e.township;
         let resultP = false;
@@ -154,7 +146,7 @@ export default class Polymerization extends Component {
           resultH = resultH || (t === e.type && stateData.history[i]);
         });
 
-        return (resultP || resultC || resultH) && result;
+        g.visible = (resultP || resultC || resultH) && result && Math.random() < 0.3;
       });
       // if (textgeos.length > 10) {
       //   let chance = (Math.sqrt(textgeos.length) + 10) / textgeos.length;
@@ -162,7 +154,6 @@ export default class Polymerization extends Component {
       //     return Math.random() < chance;
       //   });
       // }
-      this.drawGeometry(textgeos);
     }
 
     if (cameraCtrl) {
@@ -310,10 +301,12 @@ export default class Polymerization extends Component {
           ];
           var cn = bordertownSH.map(e => e.array[0]);
           let borderRings = [sh, borderSH["长宁区"], ...cn];
+
           this.maskRings = {
             sh,
             cn: borderSH["长宁区"]
           };
+
           bordertownSH.forEach(e => {
             this.maskRings[e.name] = e.array[0];
             let sx = 0,
@@ -327,6 +320,27 @@ export default class Polymerization extends Component {
             streetCenter[e.name] = [sx, sy];
             streetCounter[e.name] = [0, 0, 0];
           });
+          let rings = [this.maskRings.sh, this.maskRings.cn];
+          var polygonGraphic = new this.ArcGisGraphic({
+            geometry: {
+              type: "polygon",
+              rings: rings,
+              spatialReference: this.spatialReferencevalue
+            },
+            symbol: {
+              type: "simple-fill", // autocasts as new SimpleFillSymbol()
+              color: [67, 160, 71, 0.2],
+              outline: {
+                // autocasts as new SimpleLineSymbol()
+                color: [16, 86, 203, 0.5],
+                width: 2,
+                style: "dash"
+              }
+            }
+          });
+          this.mapMask && this.view.graphics.remove(this.mapMask);
+          this.mapMask = polygonGraphic;
+          this.view.graphics.add(this.mapMask);
 
           partyData.forEach(e => {
             streetCounter[e.township] && (streetCounter[e.township][0] += 1);
@@ -392,7 +406,8 @@ export default class Polymerization extends Component {
                     family: "microsoft-yahei",
                     size: 12
                   }
-                }
+                },
+                visible: false
               });
               texts.push(t);
               let p = new this.ArcGisGraphic({
@@ -415,6 +430,8 @@ export default class Polymerization extends Component {
             historyGrap = addPoints(historyData, "#6D4747", 5);
           this.pointDatas = [...partyGrap[0], ...citizenGrap[0], ...historyGrap[0]];
           this.textDatas = [...partyGrap[1], ...citizenGrap[1], ...historyGrap[1]];
+          this.view.graphics.addMany(this.pointDatas);
+          this.view.graphics.addMany(this.textDatas);
 
           this.view.ui.components = [];
 
