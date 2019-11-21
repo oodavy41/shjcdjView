@@ -1,0 +1,52 @@
+.popupMain {
+  margin-top: 5px;
+  color: #ffffff;
+  width: 400px;
+  border-radius: 15px;
+}
+.popupMain h3 {
+  margin: 0 0 0 10px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.popupMain ul {
+  margin: 10px 20px 0 2px;
+}
+.popupMain ul li {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: justify;
+}
+:global(#mapDiv) :global(.esri-popup__icon) {
+  height: 8px;
+  width: 8px;
+}
+
+:global(#mapDiv) :global(.esri-popup__content) {
+  margin: 0;
+}
+:global(#mapDiv) :global(.esri-popup--shadow) {
+  box-shadow: none;
+}
+:global(#mapDiv) :global(.esri-popup__main-container) {
+  padding: -1px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+:global(#mapDiv) :global(.esri-popup__button) {
+  outline: none;
+}
+:global(#mapDiv) :global(.esri-popup__footer) {
+  display: none;
+}
+:global(#mapDiv) :global(.esri-popup__header) {
+  display: none;
+}
+:global(#mapDiv) :global(.esri-popup__pointer .esri-popup__pointer-direction) {
+  background-color: rgba(0, 0, 0, 0.4);
+}

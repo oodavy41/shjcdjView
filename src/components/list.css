@@ -1,0 +1,21 @@
+.list {
+  width: 300px;
+  max-height: 400px;
+  position: absolute;
+  top: 0px;
+  right: -330px;
+  padding: 5px;
+  overflow: hidden;
+  background-color: rgba(5, 66, 99, 0.82);
+  border-width: 1px 1px 1px 10px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: linear-gradient(-60deg, var(--borderC), rgba(0, 0, 0, 0) 50%, var(--borderC));
+  border-image-slice: 10;
+  box-shadow: 10px 9px 32px 11px rgba(6, 29, 22, 0.48), inset 0 1px 30px 20px rgba(6, 77, 104, 0.5);
+}
+
+.list h4 {
+  color: var(--borderC);
+  text-align: center;
+}

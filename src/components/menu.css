@@ -1,0 +1,22 @@
+.main {
+  z-index: 1000;
+  width: 350px;
+  position: absolute;
+  right: 20px;
+  top: 300px;
+}
+.cell {
+  height: 80px;
+  margin: 10px;
+  padding-left: 80px;
+  line-height: 80px;
+  font-size: 35px;
+  color: #cdcdcd;
+  background-image: url(../assets/icons/right.png);
+  background-size: 100% 100%;
+}
+.checked {
+  color: #00d8ff;
+  background-image: url(../assets/icons/rightPick.png);
+  box-shadow: 11px 31px 20px 0 rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,161 @@
+.party {
+  --main-color: #b71c1c;
+}
+.convenient {
+  --main-color: #7cb342;
+}
+.history {
+  --main-color: #5d4037;
+}
+
+.main {
+  background-color: #4c87dd;
+  width: 100%;
+  height: 100%;
+  font-family: MicrosoftYaHei-Bold;
+  color: #ffffff;
+}
+.title {
+  position: absolute;
+  font-size: 50px;
+  letter-spacing: 0;
+  left: 81px;
+  top: 51px;
+  font-weight: bold;
+}
+
+.subtitle {
+  padding: 5px;
+  position: absolute;
+  font-size: 50px;
+  letter-spacing: 0;
+  right: 300px;
+  top: 51px;
+  font-weight: bold;
+  background: rgba(130, 177, 255, 0.18);
+  border: 1px solid #1056cb;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px 2px rgba(50, 111, 212, 0.38);
+}
+.subIco {
+  width: 50px;
+  height: 65px;
+  color: #fff;
+  vertical-align: text-bottom;
+}
+.streetDiv {
+  position: absolute;
+  left: 50px;
+  top: 156px;
+  font-size: 38px;
+  line-height: 50px;
+  text-align: center;
+}
+.streetCell {
+  float: left;
+  height: 130px;
+  max-width: 140px;
+  margin: 10px;
+  padding: 20px 6px;
+  background: rgba(130, 177, 255, 0.18);
+  border: 1px solid #1056cb;
+  box-shadow: 0 6px 14px 2px rgba(50, 111, 212, 0.38);
+  border-radius: 25px;
+}
+.streetChosen {
+  background: rgba(255, 255, 255, 0.8);
+  color: #1565c0;
+}
+.switchDiv {
+  float: left;
+  margin: 120px 0 0 0;
+
+  background-color: #5791e7;
+  border-radius: 25px;
+  width: 1830px;
+}
+.switchType {
+  margin: 30px 20px;
+  float: left;
+}
+.choosesTitle {
+  float: left;
+  width: 336px;
+  height: 125px;
+  font-size: 43px;
+  background-color: var(--main-color);
+  line-height: 125px;
+  border-radius: 27px;
+}
+.chooses {
+  float: right;
+  margin: 20px 80px;
+  height: 100%;
+}
+.choosesCell {
+  float: left;
+  min-width: 200px;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  font-size: 28px;
+  background-image: linear-gradient(180deg, #aaa 0%, var(--main-color) 80%);
+  border: 1px solid #656565;
+}
+.chosenCell {
+  background-image: linear-gradient(180deg, #fff 0%, var(--main-color) 26%);
+  border: 1px solid #979797;
+}
+.threeTitle {
+  color: #fff;
+  position: absolute;
+  top: 150px;
+  width: inherit;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900;
+}
+.threeToOne {
+  height: 1080px;
+  display: flex;
+  justify-content: space-around;
+  background-image: url(./assets/imgs/ctrlBg.jpg);
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+.threeBtn {
+  width: 30%;
+  height: 400px;
+  margin-top: 400px;
+  padding: 30px 5px;
+  border-radius: 15px;
+}
+.btnText {
+  font-size: 40px;
+  font-weight: 600;
+  position: absolute;
+  width: inherit;
+  text-align: center;
+}
+
+.threeBtn:hover {
+  box-shadow: 0 0 10px 5px #1056cb;
+}
+.highLight {
+  box-shadow: 0 0 10px 5px #1056cb;
+}
+
+.threeBtn div {
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.toRenwen {
+  background-image: url(./assets/imgs/citizen.svg);
+}
+.toCydt {
+  background-image: url(./assets/imgs/industy.svg);
+}
+.toWgzx {
+  background-image: url(./assets/imgs/gridcenter.svg);
+}

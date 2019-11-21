@@ -1,0 +1,103 @@
+.fliter {
+  --colorADD: rgba(0, 122, 255, 0.9);
+  --colorAREA: rgba(0, 255, 253, 0.9);
+  --colorPARK: rgba(255, 149, 0, 0.9);
+  --colorAI: rgba(232, 84, 30, 0.9);
+
+  z-index: 99;
+  position: absolute;
+  left: 30px;
+  bottom: 280px;
+}
+.led {
+  margin-right: 15px;
+  height: 68px;
+  width: 15px;
+  float: left;
+}
+
+.AI {
+  color: var(--colorAI);
+  background-color: var(--colorAI);
+  border-color: var(--colorAI);
+}
+
+.AREA {
+  color: var(--colorAREA);
+  background-color: var(--colorAREA);
+  border-color: var(--colorAREA);
+}
+
+.PARK {
+  color: var(--colorPARK);
+  background-color: var(--colorPARK);
+  border-color: var(--colorPARK);
+}
+
+.ADD {
+  color: var(--colorADD);
+  background-color: var(--colorADD);
+  border-color: var(--colorADD);
+}
+
+.addBg {
+  background: url(../assets/icons/aileft.png);
+}
+.areaBg {
+  background: url(../assets/icons/arealeft.png);
+}
+.aiBg {
+  background: url(../assets/icons/addleft.png);
+}
+.parkBg {
+  background: url(../assets/icons/parkleft.png);
+}
+
+.row {
+  margin: 15px;
+  height: 68px;
+}
+
+.text {
+  float: left;
+  height: 68px;
+  width: 282px;
+  line-height: 68px;
+  font-size: 30px;
+  border-width: 1px;
+  background-size: 100% 100%;
+}
+
+.left {
+  float: left;
+  margin-left: 15px;
+}
+
+.left::before {
+  content: "";
+  padding-left: 45px;
+  height: 68px;
+  margin-right: 10px;
+  background-size: 100% 100%;
+}
+
+.ADD .left::before {
+  background-image: url(../assets/icons/add.png);
+}
+
+.AI .left::before {
+  background-image: url(../assets/icons/ai.png);
+}
+
+.PARK .left::before {
+  background-image: url(../assets/icons/park.png);
+}
+
+.AREA .left::before {
+  background-image: url(../assets/icons/areaC.png);
+}
+
+.right {
+  float: right;
+  margin-right: 15px;
+}

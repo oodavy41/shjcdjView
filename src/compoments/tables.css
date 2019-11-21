@@ -1,0 +1,77 @@
+.party {
+  --main-color: #c62828;
+  --img: url(../assets/imgs/party.png);
+}
+.convenient {
+  --main-color: #08820d;
+  --img: url(../assets/imgs/citizen.png);
+}
+.history {
+  --main-color: #4e342e;
+  --img: url(../assets/imgs/history.png);
+}
+
+.counterMain {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -786px;
+  min-width: 1572px;
+  background: rgba(253, 253, 253, 0.7);
+  border: 1px solid rgba(8, 8, 8, 0.25);
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-around;
+}
+.counterCell {
+  color: var(--main-color);
+  text-align: center;
+  margin: 60px 0;
+}
+.counterImg {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: var(--img);
+}
+.counterTitle {
+  display: inline;
+  font-size: 40px;
+}
+.counterNum {
+  font-size: 40px;
+  letter-spacing: 0;
+}
+.countTable td {
+  padding: 5px 17px;
+}
+.countTr {
+  color: var(--main-color);
+}
+.trImg {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: var(--img);
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 2 0px;
+}
+.countTitle {
+  font-size: 18px;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+}
+.countTr td {
+  font-size: 21px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.countTr td:first-child {
+  text-align: start;
+  white-space: pre;
+}

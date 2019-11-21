@@ -1,0 +1,98 @@
+.park {
+  --borderC: #ffa500;
+}
+.area {
+  --borderC: #0cdbc9;
+}
+.panel {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  z-index: 5500;
+  width: 420px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgba(5, 66, 99, 0.82);
+  border-width: 1px 1px 1px 20px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: linear-gradient(-60deg, var(--borderC), rgba(0, 0, 0, 0) 50%, var(--borderC));
+  border-image-slice: 10;
+  box-shadow: 10px 9px 32px 11px rgba(6, 29, 22, 0.48), inset 0 1px 30px 20px rgba(6, 77, 104, 0.5);
+}
+.big {
+  height: 200px;
+}
+
+.small {
+  height: 100px;
+}
+
+.head {
+  margin-right: 10px;
+  width: 150px;
+  height: 200px;
+  float: left;
+}
+
+.title {
+  margin: 5px;
+  font-size: 1.2em;
+  border-color: inherit;
+  border-bottom: 2px solid var(--borderC);
+}
+
+.more {
+  color: var(--borderC);
+  font-size: 13px;
+}
+.more:hover {
+  background-color: rgba(36, 166, 255, 0.3);
+}
+
+.cv {
+  width: 4em;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+.list {
+  width: 8em;
+  position: absolute;
+  right: 0;
+  top: 180px;
+}
+
+.info p {
+  font-size: 13px;
+  line-height: 1em;
+}
+
+.moreinfos {
+  width: 300px;
+  position: absolute;
+  top: 0px;
+  right: -305px;
+  text-indent: 2em;
+  padding: 5px;
+  background-color: rgba(5, 66, 99, 0.82);
+  border-width: 1px 1px 1px 10px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: linear-gradient(-60deg, var(--borderC), rgba(0, 0, 0, 0) 50%, var(--borderC));
+  border-image-slice: 10;
+  box-shadow: 10px 9px 32px 11px rgba(6, 29, 22, 0.48), inset 0 1px 30px 20px rgba(6, 77, 104, 0.5);
+}
+
+
+.smalllist{
+  font-size: 1.5em;
+  color:#0cdbc9
+
+}
+
+.row{
+  margin: 1px;
+  font-size: 1em;
+  color:#ffffff
+}
